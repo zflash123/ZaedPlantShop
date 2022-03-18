@@ -1,6 +1,39 @@
 @extends('layouts.app')
 @section('title','Order')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("#tanaman").click(function(){
+              $("#nama_tanaman").show();
+              $("#nama_benih").hide();
+              $("#nama_media").hide();
+              $("#btn_clear").show();
+          });
+          $("#benih").click(function(){
+              $("#nama_tanaman").hide();
+              $("#nama_benih").show();
+              $("#nama_media").hide();
+              $("#btn_clear").show();
+          });
+          $("#media_tanam").click(function(){
+              $("#nama_tanaman").hide();
+              $("#nama_benih").hide();
+              $("#nama_media").show();
+              $("#btn_clear").show();
+          });
+      });
+  </script>
+  <script>
+    const clearSelection = (name) => {
+      const radioBtns = document.querySelectorAll(
+      "input[type='radio'][name='" + name + "']");
+      radioBtns.forEach((radioBtn) => {
+        if (radioBtn.checked === true)
+          radioBtn.checked = false;
+      });
+    };
+  </script>
 <div class="container pt-4 bg-white">
     <div class="row">
         <div class="col-md-8 col-xl-6">

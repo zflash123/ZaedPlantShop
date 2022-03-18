@@ -11,39 +11,7 @@
 
     <!-- Scripts -->
     <script src="/js/my-app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-          $("#tanaman").click(function(){
-              $("#nama_tanaman").show();
-              $("#nama_benih").hide();
-              $("#nama_media").hide();
-              $("#btn_clear").show();
-          });
-          $("#benih").click(function(){
-              $("#nama_tanaman").hide();
-              $("#nama_benih").show();
-              $("#nama_media").hide();
-              $("#btn_clear").show();
-          });
-          $("#media_tanam").click(function(){
-              $("#nama_tanaman").hide();
-              $("#nama_benih").hide();
-              $("#nama_media").show();
-              $("#btn_clear").show();
-          });
-      });
-  </script>
-  <script>
-    const clearSelection = (name) => {
-      const radioBtns = document.querySelectorAll(
-      "input[type='radio'][name='" + name + "']");
-      radioBtns.forEach((radioBtn) => {
-        if (radioBtn.checked === true)
-          radioBtn.checked = false;
-      });
-    };
-  </script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -72,7 +40,10 @@
                       <a class="nav-link" href="/media">Media Tanam</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/order">Pesan Sekarang</a>
+                      <a class="nav-link" href="/cart">Keranjang</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/helpdesk">Hubungi Kami</a>
                     </li>
                   </ul>
                   <ul class="navbar-nav ms-auto">

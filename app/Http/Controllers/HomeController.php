@@ -42,7 +42,7 @@ class HomeController extends Controller
         $result = DB::table('users')->where('id', $userId)->get();
         $arrImg = ["/img/keladi.jpg", "/img/peperomia.jpg", "/img/jade.jpg"];
         $arrTanaman = ["Keladi Tengkorak", "Peperomia Watermelon", "Jade Plant"];
-        return view('tanaman', ['users' => $result])->with('Gambar', $arrImg)->with('Tanaman', $arrTanaman);
+        return view('tanaman', ['users' => $result])->with('Gambar', $arrImg)->with('Barang', $arrTanaman);
     }
     public function benih()
     {
@@ -61,11 +61,20 @@ class HomeController extends Controller
         return view('media', ['users' => $result])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
     }
 
-    public function order()
+    public function cart()
     {
         $userId = Auth::id();
         $result = DB::table('users')->where('id', $userId)->get();
-        return view('order', ['users' => $result]);
+        $product = array();
+        $product[0] = "Mobil";
+        return view('cart', ['users' => $result], ['product' => $product]);
+    } 
+
+    public function helpdesk()
+    {
+        $userId = Auth::id();
+        $result = DB::table('users')->where('id', $userId)->get();
+        return view('helpdesk', ['users' => $result]);
     }
     
     public function confirm(Request $req)

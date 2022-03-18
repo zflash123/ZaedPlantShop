@@ -10,7 +10,8 @@ Route::post('/logout', [HomeController::class, 'logout']);
 Route::get('/tanaman', [HomeController::class, 'tanaman']);
 Route::get('/benih', [HomeController::class, 'benih']);
 Route::get('/media', [HomeController::class, 'media']);
-Route::get('/order', [HomeController::class, 'order']);
+Route::get('/cart', [HomeController::class, 'cart']);
+Route::get('/helpdesk', [HomeController::class, 'helpdesk']);
 Route::post('/confirm', [HomeController::class, 'confirm']);
 
 Auth::routes();
