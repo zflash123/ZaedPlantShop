@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class UserSeeder extends Seeder
 {
@@ -12,10 +17,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10),
-            'password' => Str::random(10),
-        ]);
+        User::factory()
+            ->count(10)
+            ->create();
     }
 }
