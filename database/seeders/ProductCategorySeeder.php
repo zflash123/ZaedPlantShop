@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProductCategorySeeder extends Seeder
 {
@@ -16,7 +15,8 @@ class ProductCategorySeeder extends Seeder
     public function run()
     {
         ProductCategory::create(['name' => 'Plants']);
-        ProductCategory::create(['name' => 'Media']);
         ProductCategory::create(['name' => 'Fertilizer']);
+        ProductCategory::create(['name' => 'Media']);
+        ProductCategory::create(['name' => 'Pot']);
     }
 }

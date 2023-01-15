@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,6 +18,7 @@ class Product extends Model
         'name',
         'stock',
         'price',
+        'product_category_id'
     ];
 
     /**
@@ -25,7 +27,7 @@ class Product extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
