@@ -16,7 +16,7 @@ class ProductCategorySeeder extends Seeder
     {
         ProductCategory::create(['name' => 'Plants']);
         ProductCategory::create(['name' => 'Fertilizer']);
-        ProductCategory::create(['name' => 'Media']);
+        ProductCategory::create(['name' => 'Growing Media']);
         ProductCategory::create(['name' => 'Pot']);
     }
 }

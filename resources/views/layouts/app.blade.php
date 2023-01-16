@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="/js/my-app.js"></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -61,7 +61,7 @@
                             </button>
                           </form>
                         </li>
-                        
+
                       </ul>
                     </li>
                   </ul>
@@ -103,18 +103,18 @@
                 </div>
               </form>
             </section>
-        
+
             <section class="mb-4">
               <p>
-                
+
               </p>
             </section>
-        
+
             <section>
               <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                   <h5 class="text-uppercase">Social Media</h5>
-        
+
                   <ul class="list-unstyled mb-0">
                     <li>
                       <a href="https://www.facebook.com/zaed.abdullah.1232/" class="text-white">Facebook</a>
