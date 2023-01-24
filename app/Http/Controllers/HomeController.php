@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
-// use Illuminate\Support\Facades\Redirect;
-// use Illuminate\Support\Facades\Validator;
+use App\Interfaces\UserRepositoryInterface;
 
 class HomeController extends Controller
 {
@@ -16,10 +14,20 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    private UserRepositoryInterface $userRepository;
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function __construct(UserRepositoryInterface $userRepository)
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
+        $this->userRepository = $userRepository;
     }
+
 
     /**
      * Show the application dashboard.
@@ -28,61 +36,49 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
-        $arrImg = ['/img/peperomia.jpg', '/img/samhong.jpg', '/img/humus.jpg'];
-        $arrBarang = ['Tanaman', 'Benih', 'Media Tanam'];
-        $arrLink = ['/tanaman', '/benih', '/media'];
 
-        return view('home', ['users' => $result])->with('Barang', $arrBarang)->with('Gambar', $arrImg)->with('Link', $arrLink);
+        $arrImg = ['/img/peperomia.jpg', '/img/samhong.jpg', '/img/humus.jpg'];
+        $arrBarang = ['Plant', 'Pot', 'Growing Media'];
+        $arrLink = ['/plant', '/pot', '/growing-media'];
+
+        return view('home', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg)->with('Link', $arrLink);
     }
 
     public function tanaman()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
         $arrImg = ['/img/keladi.jpg', '/img/peperomia.jpg', '/img/jade.jpg'];
         $arrTanaman = ['Keladi Tengkorak', 'Peperomia Watermelon', 'Jade Plant'];
 
-        return view('tanaman', ['users' => $result])->with('Gambar', $arrImg)->with('Barang', $arrTanaman);
+        return view('tanaman', ['users' => $this->userRepository->getUser()])->with('Gambar', $arrImg)->with('Barang', $arrTanaman);
     }
 
     public function benih()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
         $arrImg = ['/img/samhong.jpg', '/img/daisy.jpg', '/img/pakcoy.jpg'];
         $arrBarang = ['Samhong King', 'Painted Daisy', 'Red Pakcoy'];
 
-        return view('benih', ['users' => $result])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
+        return view('benih', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
     }
 
     public function media()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
         $arrImg = ['/img/humus.jpg', '/img/sekam.jpg', '/img/sekamBakar.jpg'];
         $arrBarang = ['Tanah Humus', 'Sekam Mentah', 'Sekam Bakar'];
 
-        return view('media', ['users' => $result])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
+        return view('media', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
     }
 
     public function cart()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
         $product = [];
         $product[0] = 'Mobil';
 
-        return view('cart', ['users' => $result], ['product' => $product]);
+        return view('cart', ['users' => $this->userRepository->getUser()], ['product' => $product]);
     }
 
     public function helpdesk()
     {
-        $userId = Auth::id();
-        $result = DB::table('users')->where('id', $userId)->get();
-
-        return view('helpdesk', ['users' => $result]);
+        return view('helpdesk', ['users' => $this->userRepository->getUser()]);
     }
 
     public function confirm(Request $req)

@@ -17,6 +17,6 @@
             </div>
         @endfor
     </div>
-    
+
 </div>
 @endsection

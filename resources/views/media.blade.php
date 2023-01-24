@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('content')
     <br>
-    <center><h2>Media Tanam</h2></center>    
+    <center><h2>Growing Media</h2></center>
     <br>
     <div class="container-lg">
         <div class="row mx-2 text-center justify-content-center">

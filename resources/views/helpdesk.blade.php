@@ -63,10 +63,10 @@
                     <label for="tanaman">Tanaman</label><br>
                     <input type="radio" id="benih" name="jenis_barang" value="Benih">
                     <label for="benih">Benih</label><br>
-                    <input type="radio" id="media_tanam" name="jenis_barang" value="Media Tanam">
-                    <label for="media_tanam">Media Tanam</label><br>
+                    <input type="radio" id="media_tanam" name="jenis_barang" value="Growing Media">
+                    <label for="media_tanam">Growing Media</label><br>
                 </div>
-                
+
                 <div class="mb-3" id="nama_tanaman" style="display: none;">
                     <label for="nama_tanaman">Nama Tanaman</label>
                     @error('nama_barang')
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="mb-3" id="nama_media" style="display: none;">
-                    <label for="nama_media">Nama Media Tanam</label>
+                    <label for="nama_media">Nama Growing Media</label>
                     @error('nama_barang')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -122,7 +122,7 @@
                         <input class="form-check-input" type="radio" name="nama_barang" id="sekam_bakar" value="Sekam Bakar">
                         <label for="sekam_bakar" class="form-check-label">Sekam Bakar</label>
                     </div>
-                    
+
                 </div>
                 <button type="button" class="btn btn-secondary mb-2" id="btn_clear" onclick="clearSelection('nama_barang');" style="display: none;">Clear Selection</button><br>
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>

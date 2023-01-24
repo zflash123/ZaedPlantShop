@@ -37,7 +37,7 @@
                       <a class="nav-link" href="/benih">Benih</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/media">Media Tanam</a>
+                      <a class="nav-link" href="/media">Growing Media</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/cart">Keranjang</a>

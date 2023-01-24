@@ -15,7 +15,6 @@ class ProductCategorySeeder extends Seeder
     public function run()
     {
         ProductCategory::create(['name' => 'Plants']);
-        ProductCategory::create(['name' => 'Fertilizer']);
         ProductCategory::create(['name' => 'Growing Media']);
         ProductCategory::create(['name' => 'Pot']);
     }
