@@ -33,13 +33,37 @@ class ProductSeeder extends Seeder
             'product_category_id' => '1',
         ]);
         Product::create([
+            'name' => 'Humus Soil',
+            'stock' => '5',
+            'price' => '8000',
+            'product_category_id' => '2',
+        ]);
+        Product::create([
             'name' => 'Psyllium Husk',
             'stock' => '5',
             'price' => '8000',
             'product_category_id' => '2',
         ]);
         Product::create([
-            'name' => 'Small Pot',
+            'name' => 'Burned Rice Husk',
+            'stock' => '3',
+            'price' => '11000',
+            'product_category_id' => '2',
+        ]);
+        Product::create([
+            'name' => 'Mini Bowl Ceramic Pot',
+            'stock' => '11',
+            'price' => '5000',
+            'product_category_id' => '3',
+        ]);
+        Product::create([
+            'name' => 'Hexagon Ceramic Pot',
+            'stock' => '11',
+            'price' => '5000',
+            'product_category_id' => '3',
+        ]);
+        Product::create([
+            'name' => 'Ceramic Pot D9',
             'stock' => '11',
             'price' => '5000',
             'product_category_id' => '3',

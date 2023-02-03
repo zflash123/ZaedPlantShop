@@ -54,77 +54,77 @@
                     <input type="text" class="form-control" id="email" name="email" value="@foreach ($users as $user){{ $user->email }}@endforeach">
                 </div>
 
-                <div class="mb-3" id="jenis_barang">
-                    <label for="jenis_barang" class="form-label">Jenis Barang</label><br>
-                    @error('jenis_barang')
+                <div class="mb-3" id="jenis_Product">
+                    <label for="jenis_Product" class="form-label">Jenis Product</label><br>
+                    @error('jenis_Product')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
-                    <input type="radio" id="tanaman" name="jenis_barang" value="Tanaman">
+                    <input type="radio" id="tanaman" name="jenis_Product" value="Tanaman">
                     <label for="tanaman">Tanaman</label><br>
-                    <input type="radio" id="benih" name="jenis_barang" value="Benih">
+                    <input type="radio" id="benih" name="jenis_Product" value="Benih">
                     <label for="benih">Benih</label><br>
-                    <input type="radio" id="media_tanam" name="jenis_barang" value="Growing Media">
+                    <input type="radio" id="media_tanam" name="jenis_Product" value="Growing Media">
                     <label for="media_tanam">Growing Media</label><br>
                 </div>
 
                 <div class="mb-3" id="nama_tanaman" style="display: none;">
                     <label for="nama_tanaman">Nama Tanaman</label>
-                    @error('nama_barang')
+                    @error('nama_Product')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="keladi_tengkorak" value="Keladi Tengkorak">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="keladi_tengkorak" value="Keladi Tengkorak">
                         <label for="keladi_tengkorak" class="form-check-label">Keladi Tengkorak</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="peperomia_watermelon" value="Peperomia Watermelon">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="peperomia_watermelon" value="Peperomia Watermelon">
                         <label for="peperomia_watermelon" class="form-check-label">Peperomia Watermelon</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="jade_plant" value="Jade Plant">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="jade_plant" value="Jade Plant">
                         <label for="jade_plant" class="form-check-label">Jade Plant</label>
                     </div>
                 </div>
 
                 <div class="mb-3" id="nama_benih" style="display: none;">
                     <label for="nama_benih">Nama Benih</label>
-                    @error('nama_barang')
+                    @error('nama_Product')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="samhong_king" value="Samhong King">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="samhong_king" value="Samhong King">
                         <label for="samhong_king" class="form-check-label">Samhong King</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="painted_daisy" value="Painted Daisy">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="painted_daisy" value="Painted Daisy">
                         <label for="painted_daisy" class="form-check-label">Painted Daisy</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="red_pakcoy" value="Red Pakcoy">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="red_pakcoy" value="Red Pakcoy">
                         <label for="red_pakcoy" class="form-check-label">Red Pakcoy</label>
                     </div>
                 </div>
 
                 <div class="mb-3" id="nama_media" style="display: none;">
                     <label for="nama_media">Nama Growing Media</label>
-                    @error('nama_barang')
+                    @error('nama_Product')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="tanah_humus" value="Tanah Humus">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="tanah_humus" value="Tanah Humus">
                         <label for="tanah_humus" class="form-check-label">Tanah Humus</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="sekam_mentah" value="Sekam Mentah">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="sekam_mentah" value="Sekam Mentah">
                         <label for="sekam_mentah" class="form-check-label">Sekam Mentah</label>
                     </div>
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="radio" name="nama_barang" id="sekam_bakar" value="Sekam Bakar">
+                        <input class="form-check-input" type="radio" name="nama_Product" id="sekam_bakar" value="Sekam Bakar">
                         <label for="sekam_bakar" class="form-check-label">Sekam Bakar</label>
                     </div>
 
                 </div>
-                <button type="button" class="btn btn-secondary mb-2" id="btn_clear" onclick="clearSelection('nama_barang');" style="display: none;">Clear Selection</button><br>
+                <button type="button" class="btn btn-secondary mb-2" id="btn_clear" onclick="clearSelection('nama_Product');" style="display: none;">Clear Selection</button><br>
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </form>
         </div>

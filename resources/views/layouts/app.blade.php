@@ -31,19 +31,19 @@
                 @auth
                   <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="/tanaman">Tanaman</a>
+                      <a class="nav-link" href="/plant">Plant</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/benih">Benih</a>
+                      <a class="nav-link" href="/pot">Pot</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/media">Growing Media</a>
+                      <a class="nav-link" href="/growing-media">Growing Media</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/cart">Keranjang</a>
+                      <a class="nav-link" href="/cart">Cart</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/helpdesk">Hubungi Kami</a>
+                      <a class="nav-link" href="/helpdesk">Contact Us</a>
                     </li>
                   </ul>
                   <ul class="navbar-nav ms-auto">

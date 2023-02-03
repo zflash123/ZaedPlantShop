@@ -13,7 +13,7 @@
     <p>Nama Lengkap : <?php echo $_POST['nama']; ?></p>
     <p>Email : <?php echo $_POST['email']; ?></p>
     <p>No. Telepon : <?php echo $_POST['telepon']; ?></p>
-    <p>Gambar1 : <?php echo $_POST['KTP']; ?></p>
-    <p>Gambar2 : <?php echo $_POST['KTP-Selfie']; ?></p>
+    <p>Image1 : <?php echo $_POST['KTP']; ?></p>
+    <p>Image2 : <?php echo $_POST['KTP-Selfie']; ?></p>
 </body>
 </html>

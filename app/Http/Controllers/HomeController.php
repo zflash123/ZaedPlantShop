@@ -24,7 +24,7 @@ class HomeController extends Controller
 
     public function __construct(UserRepositoryInterface $userRepository)
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
         $this->userRepository = $userRepository;
     }
 
@@ -36,36 +36,35 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $arrImg = ['/img/peperomia.jpg', '/img/samhong.jpg', '/img/humus.jpg'];
-        $arrBarang = ['Plant', 'Pot', 'Growing Media'];
+        $arrProduct = ['Plant', 'Pot', 'Growing Media'];
         $arrLink = ['/plant', '/pot', '/growing-media'];
 
-        return view('home', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg)->with('Link', $arrLink);
+        return view('home', ['users' => $this->userRepository->getUser()])->with('Product', $arrProduct)->with('Image', $arrImg)->with('Link', $arrLink);
     }
 
-    public function tanaman()
+    public function plant()
     {
         $arrImg = ['/img/keladi.jpg', '/img/peperomia.jpg', '/img/jade.jpg'];
-        $arrTanaman = ['Keladi Tengkorak', 'Peperomia Watermelon', 'Jade Plant'];
+        $arrProduct = DB::table('products')->where('product_category_id', 1)->pluck('name');
 
-        return view('tanaman', ['users' => $this->userRepository->getUser()])->with('Gambar', $arrImg)->with('Barang', $arrTanaman);
+        return view('plant', ['users' => $this->userRepository->getUser()])->with('Image', $arrImg)->with('arrProduct', $arrProduct);
     }
 
-    public function benih()
+    public function pot()
     {
-        $arrImg = ['/img/samhong.jpg', '/img/daisy.jpg', '/img/pakcoy.jpg'];
-        $arrBarang = ['Samhong King', 'Painted Daisy', 'Red Pakcoy'];
+        $arrImg = ['/img/mini-bowl-ceramic-pot.jpg', '/img/hexagon-ceramic-pot.jpg', '/img/ceramic-pot-d9.jpg'];
+        $arrProduct = DB::table('products')->where('product_category_id', 3)->pluck('name');
 
-        return view('benih', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
+        return view('pot', ['users' => $this->userRepository->getUser()])->with('arrProduct', $arrProduct)->with('Image', $arrImg);
     }
 
     public function media()
     {
         $arrImg = ['/img/humus.jpg', '/img/sekam.jpg', '/img/sekamBakar.jpg'];
-        $arrBarang = ['Tanah Humus', 'Sekam Mentah', 'Sekam Bakar'];
+        $arrProduct = DB::table('products')->where('product_category_id', 2)->pluck('name');
 
-        return view('media', ['users' => $this->userRepository->getUser()])->with('Barang', $arrBarang)->with('Gambar', $arrImg);
+        return view('media', ['users' => $this->userRepository->getUser()])->with('arrProduct', $arrProduct)->with('Image', $arrImg);
     }
 
     public function cart()
@@ -86,14 +85,14 @@ class HomeController extends Controller
         $validateData = $req->validate([
             'nama' => ['required'],
             'email' => ['required'],
-            'jenis_barang' => ['required'],
-            'nama_barang' => ['required'],
+            'jenis_Product' => ['required'],
+            'nama_Product' => ['required'],
         ]);
         $query = DB::table('order_product')->insert([
             'nama' => $validateData['nama'],
             'email' => $validateData['email'],
-            'jenis_barang' => $validateData['jenis_barang'],
-            'nama_barang' => $validateData['nama_barang'],
+            'jenis_Product' => $validateData['jenis_Product'],
+            'nama_Product' => $validateData['nama_Product'],
         ]);
         if ($query == 1) {
             echo "<script>alert('Data Sukses Dimasukkan ke Database')</script>";

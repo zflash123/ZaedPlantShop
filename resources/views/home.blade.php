@@ -10,8 +10,8 @@
             <div class="col-md-6 col-lg-3 my-3">
                 <a href="{{ $Link[$i] }}" style="color: black; text-decoration: none;">
                     <div class="p-3" style="background-color: #F8F9FA">
-                        <img src="{{ $Gambar[$i] }}" width="200px" alt="{{ $Barang[$i] }}"><br>
-                        <p>{{ $Barang[$i] }}</p>
+                        <img src="{{ $Image[$i] }}" width="200px" alt="{{ $Product[$i] }}"><br>
+                        <p>{{ $Product[$i] }}</p>
                     </div>
                 </a>
             </div>

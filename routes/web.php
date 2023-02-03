@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/logout', [HomeController::class, 'logout']);
 
-Route::get('/tanaman', [HomeController::class, 'tanaman']);
-Route::get('/benih', [HomeController::class, 'benih']);
-Route::get('/media', [HomeController::class, 'media']);
+Route::get('/plant', [HomeController::class, 'plant']);
+Route::get('/pot', [HomeController::class, 'pot']);
+Route::get('/growing-media', [HomeController::class, 'media']);
 Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/helpdesk', [HomeController::class, 'helpdesk']);
 Route::post('/confirm', [HomeController::class, 'confirm']);
