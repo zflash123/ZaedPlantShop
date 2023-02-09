@@ -1,0 +1,3 @@
+Makek stripe buat payment
+Nyobak implement mailgun
+Pakek name.com/heroku, digitalocean

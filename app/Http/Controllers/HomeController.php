@@ -17,10 +17,6 @@ class HomeController extends Controller
 
     private UserRepositoryInterface $userRepository;
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     public function __construct(UserRepositoryInterface $userRepository)
     {
@@ -36,35 +32,35 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $arrImg = ['/img/peperomia.jpg', '/img/samhong.jpg', '/img/humus.jpg'];
-        $arrProduct = ['Plant', 'Pot', 'Growing Media'];
-        $arrLink = ['/plant', '/pot', '/growing-media'];
+        $arrImg = DB::table('products')->groupBy('product_category_id')->pluck('image_name');
+        $arrProduct = ['Plant', 'Growing Media', 'Pot'];
+        $arrLink = ['/plant', '/growing-media', '/pot'];
 
         return view('home', ['users' => $this->userRepository->getUser()])->with('Product', $arrProduct)->with('Image', $arrImg)->with('Link', $arrLink);
     }
 
     public function plant()
     {
-        $arrImg = ['/img/keladi.jpg', '/img/peperomia.jpg', '/img/jade.jpg'];
+        $arrImg = DB::table('products')->where('product_category_id', 1)->pluck('image_name');
         $arrProduct = DB::table('products')->where('product_category_id', 1)->pluck('name');
 
         return view('plant', ['users' => $this->userRepository->getUser()])->with('Image', $arrImg)->with('arrProduct', $arrProduct);
     }
 
-    public function pot()
-    {
-        $arrImg = ['/img/mini-bowl-ceramic-pot.jpg', '/img/hexagon-ceramic-pot.jpg', '/img/ceramic-pot-d9.jpg'];
-        $arrProduct = DB::table('products')->where('product_category_id', 3)->pluck('name');
-
-        return view('pot', ['users' => $this->userRepository->getUser()])->with('arrProduct', $arrProduct)->with('Image', $arrImg);
-    }
-
     public function media()
     {
-        $arrImg = ['/img/humus.jpg', '/img/sekam.jpg', '/img/sekamBakar.jpg'];
+        $arrImg = DB::table('products')->where('product_category_id', 2)->pluck('image_name');
         $arrProduct = DB::table('products')->where('product_category_id', 2)->pluck('name');
 
         return view('media', ['users' => $this->userRepository->getUser()])->with('arrProduct', $arrProduct)->with('Image', $arrImg);
+    }
+
+    public function pot()
+    {
+        $arrImg = DB::table('products')->where('product_category_id', 3)->pluck('image_name');
+        $arrProduct = DB::table('products')->where('product_category_id', 3)->pluck('name');
+
+        return view('pot', ['users' => $this->userRepository->getUser()])->with('arrProduct', $arrProduct)->with('Image', $arrImg);
     }
 
     public function cart()

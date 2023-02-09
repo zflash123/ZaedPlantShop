@@ -10,7 +10,7 @@
             <div class="col-md-6 col-lg-3 my-3">
                 <div class="p-3" style="background-color: #F8F9FA">
                     <a href="/order" style="color: black; text-decoration: none;">
-                    <img src="{{ $Image[$i] }}" width="200px" alt="{{ $arrProduct[$i] }}"><br>
+                    <img src="/img/{{ $Image[$i] }}.jpg" width="200px" alt="{{ $arrProduct[$i] }}"><br>
                     </a>
                     <p>{{ $arrProduct[$i] }}</p>
                     <button type="button" class="btn btn-primary">Add to cart</button>
