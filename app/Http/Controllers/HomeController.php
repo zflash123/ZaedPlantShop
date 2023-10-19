@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Interfaces\UserRepositoryInterface;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
@@ -73,6 +74,21 @@ class HomeController extends Controller
             ->get();
 
         return view('cart', ['users' => $this->userRepository->getUser()], ['products' => $products]);
+    }
+
+    public function addToCart(Request $req)
+    {
+        $userId = Auth::id();
+        $product_id = DB::table('products')
+            ->select('products.id')
+            ->where('products.name', $req->product_name)
+            ->get();
+        Cart::create([
+            'user_id' => $userId,
+            'product_id' => $product_id[0]->id,
+            'total_added' => 1,
+        ]);
+        return redirect('/cart');
     }
 
     public function helpdesk()

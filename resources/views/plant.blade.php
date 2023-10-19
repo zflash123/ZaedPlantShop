@@ -13,7 +13,11 @@
                     <img src="/img/{{ $Image[$i] }}.jpg" width="200px" alt="{{ $arrProduct[$i] }}"><br>
                     </a>
                     <p>{{ $arrProduct[$i] }}</p>
-                    <button type="button" class="btn btn-primary">Add to cart</button>
+                    <form action="{{ url('/add-to-cart') }}" method="POST">
+                    @csrf
+                        <input type="hidden" name="product_name" value="{{ $arrProduct[$i] }}">
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
                 </div>
             </div>
         @endfor

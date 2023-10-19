@@ -12,6 +12,7 @@ Route::get('/pot', [HomeController::class, 'pot']);
 Route::get('/growing-media', [HomeController::class, 'media']);
 Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/helpdesk', [HomeController::class, 'helpdesk']);
+Route::post('/add-to-cart', [HomeController::class, 'addToCart']);
 Route::post('/confirm', [HomeController::class, 'confirm']);
 
 Auth::routes();
