@@ -40,7 +40,7 @@
             <form action="/confirm" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="nama" class="form-label">Nama Lengkap</label>
+                    <label for="nama" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="nama" name="nama" value="@foreach ($users as $user){{ $user->name }}@endforeach">
                     @error('nama')
                         <div class="text-danger">{{ $message }}</div>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="mb-3" id="jenis_Product">
-                    <label for="jenis_Product" class="form-label">Jenis Product</label><br>
+                    <label for="jenis_Product" class="form-label">Product Category</label><br>
                     @error('jenis_Product')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror

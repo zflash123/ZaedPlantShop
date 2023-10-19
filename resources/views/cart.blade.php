@@ -4,7 +4,7 @@
 
 <div class="mt-2 mb-1">
     <br>
-        <center><h2>Keranjang</h2></center>
+        <center><h2>Cart</h2></center>
     <br>
 </div>
 
