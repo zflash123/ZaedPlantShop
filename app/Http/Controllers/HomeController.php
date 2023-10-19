@@ -65,10 +65,14 @@ class HomeController extends Controller
 
     public function cart()
     {
-        $product = [];
-        $product[0] = 'Mobil';
+        $userId = Auth::id();
+        $products = DB::table('carts')
+            ->join('products', 'products.id', '=', 'carts.product_id')
+            ->select('products.name')
+            ->where('carts.user_id', $userId)
+            ->get();
 
-        return view('cart', ['users' => $this->userRepository->getUser()], ['product' => $product]);
+        return view('cart', ['users' => $this->userRepository->getUser()], ['products' => $products]);
     }
 
     public function helpdesk()

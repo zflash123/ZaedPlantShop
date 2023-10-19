@@ -10,11 +10,14 @@
 
 <div class="container mb-5">
     <div class="ms-5 me-5">
-        @foreach ($product as $value)
+        @foreach ($products as $product)
         <div class="d-grid gap-3">
-            <div class="p-3 bg-light border">{{ $value }}</div>
+            <div class="p-3 bg-light border">{{ $product->name }}</div>
         </div>
         @endforeach
+        <br>
+        <br>
+        <br>
     </div>
 </div>
 @endsection
